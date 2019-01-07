@@ -1,8 +1,8 @@
-package ro.polak.jsr.playground.validation
+package ro.polak.playground.jsr.validation
 
 import javax.validation.Valid
 
-open /*data*/ class EntityWithListForInheritance(
+data class EntityWithList(
 
     @field:Valid
     val entities: List<BasicEntity> = listOf(),

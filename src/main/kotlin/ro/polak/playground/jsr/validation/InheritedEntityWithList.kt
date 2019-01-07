@@ -1,4 +1,4 @@
-package ro.polak.jsr.playground.validation
+package ro.polak.playground.jsr.validation
 
 /*data*/ class InheritedEntityWithList(
 

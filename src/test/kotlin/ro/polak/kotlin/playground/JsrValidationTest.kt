@@ -2,10 +2,10 @@ package ro.polak.kotlin.playground
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import ro.polak.jsr.playground.validation.BasicEntity
-import ro.polak.jsr.playground.validation.ComposerEntity
-import ro.polak.jsr.playground.validation.EntityWithList
-import ro.polak.jsr.playground.validation.InheritedEntityWithList
+import ro.polak.playground.jsr.validation.BasicEntity
+import ro.polak.playground.jsr.validation.ComposerEntity
+import ro.polak.playground.jsr.validation.EntityWithList
+import ro.polak.playground.jsr.validation.InheritedEntityWithList
 import javax.validation.Validation
 
 
@@ -56,8 +56,10 @@ class JsrValidationTest {
         )
 
         assertEquals(violations.size, 1)
-        assertEquals("{javax.validation.constraints.NotEmpty.message}", violations.first().messageTemplate)
-        assertEquals("entities[0].name", violations.first().propertyPath.toString())
+
+        val violation = violations.first()
+        assertEquals("{javax.validation.constraints.NotEmpty.message}", violation.messageTemplate)
+        assertEquals("entities[0].name", violation.propertyPath.toString())
     }
 
     @Test
@@ -73,8 +75,10 @@ class JsrValidationTest {
         )
 
         assertEquals(violations.size, 1)
-        assertEquals("{javax.validation.constraints.NotEmpty.message}", violations.first().messageTemplate)
-        assertEquals("entities[0].name", violations.first().propertyPath.toString())
+
+        val violation = violations.first()
+        assertEquals("{javax.validation.constraints.NotEmpty.message}", violation.messageTemplate)
+        assertEquals("entities[0].name", violation.propertyPath.toString())
     }
 
     @Test
@@ -92,8 +96,10 @@ class JsrValidationTest {
         )
 
         assertEquals(violations.size, 1)
-        assertEquals("{javax.validation.constraints.NotEmpty.message}", violations.first().messageTemplate)
-        assertEquals("inheritedEntityWithList.entities[0].name", violations.first().propertyPath.toString())
+
+        val violation = violations.first()
+        assertEquals("{javax.validation.constraints.NotEmpty.message}", violation.messageTemplate)
+        assertEquals("inheritedEntityWithList.entities[0].name", violation.propertyPath.toString())
     }
 
 
@@ -109,6 +115,4 @@ class JsrValidationTest {
 
         assertEquals(violations.size, 2)
     }
-
-
 }

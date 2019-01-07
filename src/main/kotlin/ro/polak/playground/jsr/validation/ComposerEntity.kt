@@ -1,4 +1,4 @@
-package ro.polak.jsr.playground.validation
+package ro.polak.playground.jsr.validation
 
 import javax.validation.Valid
 
