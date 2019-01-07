@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import ro.polak.playground.jackson.JsonAnyWrapper
+import ro.polak.playground.jackson.JsonAnyHolder
 
 
 class JacksonTest {
@@ -19,8 +19,9 @@ class JacksonTest {
         val input = "{\"result\": [\"val1\", \"val2\"]}"
 
         // Result is of type Any
-        val output = mapper.readValue<JsonAnyWrapper>(input)
+        val output = mapper.readValue<JsonAnyHolder>(input)
 
+        @Suppress("UNCHECKED_CAST")
         val listResult = (output.result as List<String>)
 
         assertTrue(listResult.contains("val1"))
@@ -37,8 +38,9 @@ class JacksonTest {
         val input = "{\"result\": \"stringvalue\"}"
 
         // Result is of type Any
-        val output = mapper.readValue<JsonAnyWrapper>(input)
+        val output = mapper.readValue<JsonAnyHolder>(input)
 
+        @Suppress("UNCHECKED_CAST")
         assertThrows<ClassCastException> { (output.result as List<String>) }
     }
 }
