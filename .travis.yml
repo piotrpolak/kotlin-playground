@@ -3,8 +3,18 @@ language: java
 jdk:
   - oraclejdk8
 
+install:
+  - echo "Skipped"
+
 script:
   - ./gradlew test
+
+
+# https://docs.travis-ci.com/user/languages/java/#caching
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
 cache:
   directories:
