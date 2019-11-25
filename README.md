@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/piotrpolak/kotlin-playground.svg?branch=master)](https://travis-ci.org/piotrpolak/kotlin-playground)
 
 I started this project to document and play with various Kotlin features that first seemed to be counterintuitive or confusing when
-compared to the old school Java implementations (like the ["is" property prefix disappearing in Jackson mappings](https://stackoverflow.com/questions/32270422/jackson-renames-primitive-boolean-field-by-removing-is)).
+compared to the old school Java implementations (like the [`is` property prefix disappearing in Jackson mappings](https://stackoverflow.com/questions/32270422/jackson-renames-primitive-boolean-field-by-removing-is)).
 
 But then I feel in love in Kotlin so this repository might be outdated :)
 
